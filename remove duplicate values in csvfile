@@ -1,0 +1,15 @@
+import pandas as pd 
+import csv
+#take csv file
+data = pd.read_csv("AddAndLatAndLon.csv") 
+#sort by name or number
+data.sort_values("Number", inplace = True) 
+# to drop duplicates
+data.drop_duplicates(subset ="Address", 
+                     keep = False, inplace = True) 
+# to display data
+data
+
+
+#output to another csvfile
+data.to_csv("AddAndLatAndLonNodup_1.csv")
